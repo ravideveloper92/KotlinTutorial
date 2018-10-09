@@ -76,6 +76,7 @@ class UserAdapter internal constructor(private val list: List<ResultsItem>, priv
     }
 
 
+
     interface UserRemoveListener {
         fun onUserRemoved(position: Int)
     }
