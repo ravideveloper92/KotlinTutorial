@@ -2,12 +2,10 @@ package com.demo.shaadi.adapter
 
 import android.content.Context
 import android.os.Handler
-import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import com.bumptech.glide.Glide
 import com.demo.shaadi.R
 import com.demo.shaadi.datamodel.ResultsItem
@@ -72,20 +70,11 @@ class UserAdapter internal constructor(private val list: List<ResultsItem>, priv
                         .into(ivUser)
 
             }
-            enterAnimation(viewHolder.cvRoot, position)
         }
 
 
     }
 
-    fun enterAnimation(cardView: CardView?, position: Int) {
-        if (position > lastPosition) {
-            val animation = AnimationUtils.loadLayoutAnimation(context,
-                    R.anim.layout_animation_fall_down)
-            cardView?.layoutAnimation = animation
-            lastPosition = position
-        }
-    }
 
     interface UserRemoveListener {
         fun onUserRemoved(position: Int)
