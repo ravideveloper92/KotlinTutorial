@@ -41,7 +41,7 @@ class UserProfileFragment : Fragment(), UserAdapter.UserRemoveListener, View.OnC
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding!!.loading = true
-         binding!!.executePendingBindings()
+
         initRecyclerView()
     }
 
@@ -68,7 +68,7 @@ class UserProfileFragment : Fragment(), UserAdapter.UserRemoveListener, View.OnC
         userProfileVM?.userList?.observe(this, Observer {
             if (it == null) {
                 binding!!.loading = null
-                binding!!.executePendingBindings()
+
                 binding!!.txtNoResult.text = "No Internet"
                 binding!!.ivNoResult.setImageResource(R.drawable.internet)
                 binding!!.btnRetry.visibility = View.VISIBLE
@@ -76,7 +76,7 @@ class UserProfileFragment : Fragment(), UserAdapter.UserRemoveListener, View.OnC
             } else {
                 binding!!.rvUsers.adapter = UserAdapter(it!!, this)
                 binding!!.loading = false
-                binding!!.executePendingBindings()
+
 
             }
 
@@ -86,7 +86,7 @@ class UserProfileFragment : Fragment(), UserAdapter.UserRemoveListener, View.OnC
 
     override fun onUserRemoved(position: Int) {
         binding!!.loading = null
-        binding!!.executePendingBindings()
+
         binding!!.txtNoResult.text = "Not found"
         binding!!.btnRetry.visibility = View.GONE
         binding!!.ivNoResult.setImageResource(R.drawable.notfound)
