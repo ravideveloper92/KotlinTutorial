@@ -2,6 +2,6 @@
     <string name="app_name">ShaadiMatches</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="he">Hell fragment</string>
+    <string name="he">Hell</string>
     <string name="retry">RETRY</string>
 </resources>
